@@ -41,6 +41,7 @@ $(document).ready(function() {
         });
     });
 
+    // Refresh the page every second.
     var refreshId = setInterval(function(){
         $("#RefreshButton").click();
     }, 1000);

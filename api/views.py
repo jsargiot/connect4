@@ -27,8 +27,11 @@ def _handle_get(request):
     return HttpResponse(json.dumps(result))
 
 def _handle_post(request):
+    """ 
+    Handles the creation of a new disc, in the game it means an user has
+    inserted the disc in a column.
+    """
     try:
-        print "POOOOST: " + repr(request.POST.get("color"))
         color = request.POST.get("color")
         column = request.POST.get("column")
 
@@ -43,4 +46,4 @@ def _handle_post(request):
             }))
     except Exception as e:
         return HttpResponse('{"error_message": "' + repr(e) + '"')
-        
+

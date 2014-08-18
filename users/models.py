@@ -3,6 +3,9 @@ from django.db.models import Max
 
 # Create your models here.
 class Disc(models.Model):
+    """
+    An object of this class represents the disc that is inserted in the grid.
+    """
     color = models.CharField(max_length=1)
     column = models.IntegerField("column")
     row = models.IntegerField("row")
