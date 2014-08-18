@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Player {{ player_id }}</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/foundation.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/player.css' %}">
+
+    <script src="{% static 'users/js/jquery-1.11.1.js' %}" type="text/javascript"></script>
+    <script src="{% static 'users/js/connect4.js' %}" type="text/javascript"></script>
+</head>
+<body>
+    <header class="row">
+        <div class="small-12 columns">
+            <h1 class="text-center">Welcome to the game player {{ player_id }}</h1>
+        </div>
+    </header>
+
+    <section class="row">
+        <div class="gamegrid">
+            <div id="Row5" class="gridrow">
+                <div id="Space50" class="gridspace"></div>
+                <div id="Space51" class="gridspace"></div>
+                <div id="Space52" class="gridspace"></div>
+                <div id="Space53" class="gridspace"></div>
+                <div id="Space54" class="gridspace"></div>
+                <div id="Space55" class="gridspace"></div>
+                <div id="Space56" class="gridspace"></div>
+            </div>
+            <div id="Row4" class="gridrow">
+                <div id="Space40" class="gridspace"></div>
+                <div id="Space41" class="gridspace"></div>
+                <div id="Space42" class="gridspace"></div>
+                <div id="Space43" class="gridspace"></div>
+                <div id="Space44" class="gridspace"></div>
+                <div id="Space45" class="gridspace"></div>
+                <div id="Space46" class="gridspace"></div>
+            </div>
+            <div id="Row3" class="gridrow">
+                <div id="Space30" class="gridspace"></div>
+                <div id="Space31" class="gridspace"></div>
+                <div id="Space32" class="gridspace"></div>
+                <div id="Space33" class="gridspace"></div>
+                <div id="Space34" class="gridspace"></div>
+                <div id="Space35" class="gridspace"></div>
+                <div id="Space36" class="gridspace"></div>
+            </div>
+            <div id="Row2" class="gridrow">
+                <div id="Space20" class="gridspace"></div>
+                <div id="Space21" class="gridspace"></div>
+                <div id="Space22" class="gridspace"></div>
+                <div id="Space23" class="gridspace"></div>
+                <div id="Space24" class="gridspace"></div>
+                <div id="Space25" class="gridspace"></div>
+                <div id="Space26" class="gridspace"></div>
+            </div>
+            <div id="Row1" class="gridrow">
+                <div id="Space10" class="gridspace"></div>
+                <div id="Space11" class="gridspace"></div>
+                <div id="Space12" class="gridspace"></div>
+                <div id="Space13" class="gridspace"></div>
+                <div id="Space14" class="gridspace"></div>
+                <div id="Space15" class="gridspace"></div>
+                <div id="Space16" class="gridspace"></div>
+            </div>
+            <div id="Row0" class="gridrow">
+                <div id="Space00" class="gridspace"></div>
+                <div id="Space01" class="gridspace"></div>
+                <div id="Space02" class="gridspace"></div>
+                <div id="Space03" class="gridspace"></div>
+                <div id="Space04" class="gridspace"></div>
+                <div id="Space05" class="gridspace"></div>
+                <div id="Space06" class="gridspace"></div>
+            </div>
+            <div class="gridrow">
+                <div class="gridspace control">
+                    <form action="{% url 'api:index' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="column" value="0" />
+                        <input type="hidden" name="color" value="{{ player_color }}" />
+                        <input id="ButtonAdd0" type="submit" value="Drop" class="button tiny" />
+                    </form>
+                </div>
+                <div class="gridspace control">
+                    <form action="{% url 'api:index' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="column" value="1" />
+                        <input type="hidden" name="color" value="{{ player_color }}" />
+                        <input id="ButtonAdd0" type="submit" value="Drop" class="button tiny" />
+                    </form>
+                </div>
+                <div class="gridspace control">
+                    <form action="{% url 'api:index' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="column" value="2" />
+                        <input type="hidden" name="color" value="{{ player_color }}" />
+                        <input id="ButtonAdd0" type="submit" value="Drop" class="button tiny" />
+                    </form>
+                </div>
+                <div class="gridspace control">
+                    <form action="{% url 'api:index' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="column" value="3" />
+                        <input type="hidden" name="color" value="{{ player_color }}" />
+                        <input id="ButtonAdd0" type="submit" value="Drop" class="button tiny" />
+                    </form>
+                </div>
+                <div class="gridspace control">
+                    <form action="{% url 'api:index' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="column" value="4" />
+                        <input type="hidden" name="color" value="{{ player_color }}" />
+                        <input id="ButtonAdd0" type="submit" value="Drop" class="button tiny" />
+                    </form>
+                </div>
+                <div class="gridspace control">
+                    <form action="{% url 'api:index' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="column" value="5" />
+                        <input type="hidden" name="color" value="{{ player_color }}" />
+                        <input id="ButtonAdd0" type="submit" value="Drop" class="button tiny" />
+                    </form>
+                </div>
+                <div class="gridspace control">
+                    <form action="{% url 'api:index' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="column" value="6" />
+                        <input type="hidden" name="color" value="{{ player_color }}" />
+                        <input id="ButtonAdd0" type="submit" value="Drop" class="button tiny" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <button id="RefreshButton" type="button">REFRESH</button>
+    </section>
+
+    <div id="result"></div>
+        
+</body>
+</html>

@@ -1,0 +1,27 @@
+/*
+ * Styles for the player page
+ */
+.gamegrid {
+  width: 100%;
+}
+  .gamegrid .gridrow {
+    display: block;
+    text-align: center;
+  }
+  .gridspace {
+    width: 4em;
+    height: 4em;
+    border: 1px solid black;
+    display: inline-block;
+  }
+  .gridspace.control {
+    border: 0;
+  }
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
