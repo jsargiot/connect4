@@ -17,5 +17,6 @@ def calculate_row_available(column):
     if 'row__max' in res:
         if res['row__max'] is None:
             return 0
-        return res['row__max'] + 1
+        if res['row__max'] < 5:
+            return res['row__max'] + 1
     return -1
