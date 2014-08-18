@@ -3,7 +3,7 @@ $(document).ready(function() {
     // Let's add the listener to the refresh button
     $("#RefreshButton").click(function(){
         // We need to get the latest info from the server
-        $.get("http://127.0.0.1:8000/api/disc/", function( data ) {
+        $.get("/api/disc/", function( data ) {
             $("#Result").html( data );
             result = $.parseJSON(data)
             for (var r in result) {
