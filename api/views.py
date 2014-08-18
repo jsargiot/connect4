@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 import json
 
@@ -27,7 +26,7 @@ def _handle_get(request):
     return HttpResponse(json.dumps(result))
 
 def _handle_post(request):
-    """ 
+    """
     Handles the creation of a new disc, in the game it means an user has
     inserted the disc in a column.
     """
